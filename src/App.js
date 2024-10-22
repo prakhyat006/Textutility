@@ -5,11 +5,11 @@ import { useState } from 'react';
 import Alert from './Components/Alert';
 import About from './Components/About';
 import React from "react";
-// import {  Route, Routes } from 'react-router-dom';
-// import {
-//   BrowserRouter as Router,
-//   Link
-// } from "react-router-dom";
+import {  Route, Routes } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Link
+} from "react-router-dom";
 function App() {
   // const s ="light"
   const [mode1,setmode]=useState("light");
@@ -40,20 +40,20 @@ function App() {
   
   return (
    <>
-  <Navbar t="Prakhyat" h="Home" a="About" mode={mode1}   toggle={toggle}/>
+   <Router>
+  <Navbar t="TextModify" h="Home" a="About" mode={mode1}   toggle={toggle}/>
   <Alert alert={alert}/>
   < div className="container my-3">
  
-
-          {/* <Route path="/about" element={<About />}> */}
-          {/* </Route> */}
-          <TextArea heading="Enter the text for analysis" mode={mode1} showalert={showalert}/>
-          {/* </Route> */}
-        {/* </Routes> */}
+  <Routes>
+  <Route path='/' element={<TextArea heading="Enter the Text for Analysis" mode={mode1} showalert={showalert}/>}/>
+  <Route path="/about" element={<About  mode={mode1}/>}/>
+          
+  </Routes>
   
   
   </div> 
-  {/* </Router> */}
+  </Router>
    </>
   );
 }
