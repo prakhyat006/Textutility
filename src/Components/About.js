@@ -1,7 +1,7 @@
 import React ,{useState, useSyncExternalStore}from 'react'
 
 
-export default function About(props) {
+export default function About() {
   const[mystyle,setmystyle]=useState({
     color:"white",
     backgroundColor:"Black",
@@ -28,9 +28,9 @@ else{
 }
   return (
 
-    <div className="accordion container my-2 " id="accordionExample" style = {props.mode}>
-        <h1 style={{Color:props.mode==="light"?"black":"white"}}>About Us</h1>
-  <div className="accordion-item" style={{Color:props.mode==="light"?"black":"white"}}>
+    <div className="accordion container my-2" id="accordionExample" style={mystyle}>
+        <h1>About Us</h1>
+  <div className="accordion-item" style={mystyle}>
     <h2 className="accordion-header" >
       <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"style={mystyle} >
         Accordion Item #1

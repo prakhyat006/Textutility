@@ -4,7 +4,6 @@ export default function TextArea(props) {
     const [text,settext]=useState("")
     const onClickef =() =>{
         settext(text.toUpperCase())
-        props.showalert("Converted to upper Case","success")
     }
     const onChangeef =(event) =>{
         settext(event.target.value)
@@ -12,17 +11,14 @@ export default function TextArea(props) {
     }
     const onClickef1 = ()=>{
       settext(text.toLowerCase());
-      props.showalert("Converted to Lower Case","success")
     }
     const onClickef2 = ()=>{
       settext("")
-      props.showalert("Text cleared","success")
     }
     const speak = () => {
       let msg = new SpeechSynthesisUtterance();
       msg.text = text;
       window.speechSynthesis.speak(msg);
-      props.showalert("Read the Text","success")
     }
   return (
     <>
